@@ -6,3 +6,6 @@ log.html
 *-screenshot-*.png
 *\$py.class
 *.swp
+*.bak
+.eggs/
+*.egg-info/

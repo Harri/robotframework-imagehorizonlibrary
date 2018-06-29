@@ -15,13 +15,13 @@ class _RecognizeImages(object):
 
     def __normalize(self, path):
         if (not self.reference_folder or
-                not isinstance(self.reference_folder, basestring) or
+                not isinstance(self.reference_folder, str) or
                 not isdir(self.reference_folder)):
             raise ReferenceFolderException('Reference folder is invalid: '
                                            '"%s"' % self.reference_folder)
-        if (not path or not isinstance(path, basestring)):
+        if (not path or not isinstance(path, str)):
             raise InvalidImageException('"%s" is invalid image name.' % path)
-        path = unicode(path.lower().replace(' ', '_'))
+        path = str(path.lower().replace(' ', '_'))
         path = abspath(path_join(self.reference_folder, path))
         if not path.endswith('.png') and not isdir(path):
             path += '.png'
